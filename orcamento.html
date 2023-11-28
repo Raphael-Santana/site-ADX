@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento</title>
+    <link rel="stylesheet" href="orcamento.css">
+</head>
+<body>
+    <header>
+        <img src="Imagens/logo-adx.png" alt="Logo ADX">        
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="orcamento.html">Orçamento</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </header>
+<main>
+    <div>
+        <h1>Os <span style="color: #00C2FF;">melhores planos</span> para<br> a sua empresa <span style="color: #00C2FF;">voar</span></h1>
+    </div>
+    <h3>Preencha os campos abaixo:</h3>
+    <div class="inputs">
+                <p class="input-p">Quantidade de Servidores &#40;Físicos/Virtuais&#41;:</p>
+                <form action="#">
+                    <input type="number" name="texto" id="quantidadeServidores">
+                </form>
+                <p class="input-p">Números de Colaboradores:</p>
+                <form action="#">
+                    <input type="number" name="texto" id="numColaboradores">
+                </form>
+                <p class="input-p">Número de Filiais:</p>
+                <form action="#">
+                    <input type="number" name="texto" id="numFiliais">
+                </form>
+                <p class="input-p">Sistemas Utilizados:</p>
+                <form action="#">
+                    <input type="number" name="texto" id="sistemasUtilizados">
+                </form>
+                <p class="input-p">Possui Plano Estratégico?</p>
+                <form action="#">
+                    <select id="planoEstrategico" name="opcao">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </form>
+        </div>
+        <a href="#" class="button-calculo">
+            <button class="button" onclick="coletarInformacoes()">
+                <span class="button-content">CALCULAR</span>
+
+            </button>
+        </a>
+</main>
+<footer>
+    <div class="footer-left">
+        <img src="Imagens/logo-adx-footer.png" alt="Logo ADX">
+        <p>Equipe altamente<br>capacitada e<br>comprometida 
+        </p>
+    </div>
+    <div class="footer-mid">
+        <h2>Contatos Úteis:</h2>
+        <p><i>Tel.: (79) 3013-4140</i></p>
+        <p><i>Endereço: Av. Ministro<br>Geraldo Barreto Sobral,2100 -<br>JFC Trade Center - Sala 1506 -<br>Jardins - Aracaju - SE</i></p>
+    </div>
+    <div class="footer-right">
+        <h2>Nossas Redes Sociais:</h2>
+        <div class="redes">
+            <a href="https://www.instagram.com/grupo.adx/" class="button2" target="_blank"><img src="Imagens/logo-insta.svg" alt="Logo Instagram"></a>
+            <a href="https://www.facebook.com/ADXTI/?locale=pt_BR" class="button2" target="_blank"><img src="Imagens/logo-face.svg" alt="Logo Facebook"></a>
+            <a href="https://www.youtube.com/channel/UCEI22GTWsLaB7lqHGfcXmxw/videos" class="button2" target="_blank"><img src="Imagens/logo-ytb.svg" alt="Logo Youtube"></a>
+        </div>
+    </div>
+</footer>
+<script>
+    function coletarInformacoes() {
+        // Obter valores dos campos
+        var quantidadeServidores = document.getElementById('quantidadeServidores').value;
+        var numColaboradores = document.getElementById('numColaboradores').value;
+        var numFiliais = document.getElementById('numFiliais').value;
+        var sistemasUtilizados = document.getElementById('sistemasUtilizados').value;
+        var planoEstrategico = document.getElementById('planoEstrategico').value;
+
+                // Verificar se todos os campos estão preenchidos
+        if (quantidadeServidores === "" || numColaboradores === "" || numFiliais === "" || sistemasUtilizados === "" || planoEstrategico === "") {
+            alert("Por favor, preencha todos os campos antes de calcular.");
+            return;
+        }
+
+        // Armazenar os valores no localStorage
+        localStorage.setItem('quantidadeServidores', quantidadeServidores);
+        localStorage.setItem('numColaboradores', numColaboradores);
+        localStorage.setItem('numFiliais', numFiliais);
+        localStorage.setItem('sistemasUtilizados', sistemasUtilizados);
+        localStorage.setItem('planoEstrategico', planoEstrategico);
+        window.location.href = 'info.html';
+    }
+      
+</script>
+</body>
+</html>
